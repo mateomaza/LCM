@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>PageTitle</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link href="/css/site.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+
+
+
+        <div class="row">
+            <div class="col border">
+
+            </div>
+            <div class="col border">
+                <h5>Enter Values</h5>
+                <form class="row gy-2 gx-3">
+                    <input min="0" max="99" value="3" id="fizz" class="form-control col" type="number" placeholder="Fizz"
+                        aria-label="Fizz Value">
+                    <input min="1" max="100" value="5" id="buzz" class="form-control col" type="number"  placeholder="Buzz"
+                        aria-label="Buzz Value">
+                    <button id="button" type="button" class="btn btn-dark">Buzz It</button>
+                </form>
+                <h3 class="mt-5 border-bottom border-2">Results</h3>
+                <div class="table-responsive overflow-auto">
+                    <table class="table table-striped table-sm overflow-y: scroll">
+                        <tbody id="display">
+                            <!--Here the table rows get generated with JS-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+    
+    <script src="/js/site.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
