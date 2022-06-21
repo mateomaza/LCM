@@ -16,8 +16,8 @@ function getValues() {
     fizz = Number(fizz);
     buzz = Number(buzz);
 
-    // We test if those values are integers from 0 to 100 or not (and make sure they're not undefined)
-    if (Number.isInteger(fizz) && Number.isInteger(buzz) && fizz > 0 && fizz <= 100 && buzz > 0 && buzz <= 100 &&
+    // We test if those values are integers from 1 to 10000 or not (and make sure they're not undefined)
+    if (Number.isInteger(fizz) && Number.isInteger(buzz) && fizz > 0 && fizz <= 10000 && buzz > 0 && buzz <= 10000 &&
         typeof fizz !== undefined && typeof buzz !== undefined) {
 
         // We call the functions to generate "nums" and display it
@@ -25,7 +25,7 @@ function getValues() {
         displayNums(nums)
 
     } else {
-        alert("Values must be integers from 1 to 100")
+        alert("Values must be integers from 1 to 10000")
     }
 }
 
@@ -38,7 +38,7 @@ function generateNums(fizz, buzz) {
     let numbers = [];
 
     // We append every number in the fizz:buzz range to the variable "numbers"
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 1; i <= 10000; i++) {
         if (i % fizz == 0 && i % buzz == 0) {
             numbers.push("FizzBuzz")
         } else if (i % fizz == 0) {
@@ -61,18 +61,19 @@ function displayNums(numbers) {
 
     // Variable where we'll store all rows generated
     let templateRows = "";
+    let templateData = "";
 
     for (let i = 0; i < numbers.length; i++) {
 
-        // Variable for classes, so we make even numbers bold with CSS
+        // Variable for classes, so we make style Fizz, Buzz & FizzBuzz :)
         let className = "";
 
         // We pull out each individual number each time we iterate through the loop
         let number = numbers[i];
 
-        // We set an "if statement" to add a different class to even and odd numbers
+        // We set "if & else if statements" so we add diferent classes
         if (number == "FizzBuzz") {
-            className = "text-danger"
+            className = "FizzBuzz"
         } else if (number == "Fizz") {
             className = "text-success"
         } else if (number == "Buzz") {
@@ -82,12 +83,16 @@ function displayNums(numbers) {
         }
 
         // We add each row with "template literals"
-        templateCols += `<td class="${className}" >${number}</td>`
+        //templateCols += `<td class="${className}" >${number}</td>`
 
-        if (number % 5 == 0 ||){
-            templateRows += `<tr><td class="${className}">${number}</td></tr>`
+        if (i % 5 == 0 && i !== 0) {
+            templateRows += `<tr>${templateData}</tr>`
+            templateData = `<td class="${className}">${number}</td>`
+        } else if (i == 9999) {
+            templateData += `<td class="${className}">${number}</td>`
+            templateRows += `<tr>${templateData}</tr>`
         } else {
-            templateRows += `<td class="${className}">${number}</td>`
+            templateData += `<td class="${className}">${number}</td>`
         }
     }
 
