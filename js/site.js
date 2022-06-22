@@ -12,13 +12,14 @@ function getValues() {
     let fizz = document.getElementById("fizz").value
     let buzz = document.getElementById("buzz").value
 
+    // Here we could prevent empty values from being inputed, but they still won't work as fizz & buzz can't be 0
+
     // We convert those values into Number() objects
     fizz = Number(fizz);
     buzz = Number(buzz);
 
     // We test if those values are integers from 1 to 10000 or not (and make sure they're not undefined)
-    if (Number.isInteger(fizz) && Number.isInteger(buzz) && fizz > 0 && fizz <= 10000 && buzz > 0 && buzz <= 10000 &&
-        typeof fizz !== undefined && typeof buzz !== undefined) {
+    if (Number.isInteger(fizz) && Number.isInteger(buzz) && fizz > 0 && fizz <= 10000 && buzz > 0 && buzz <= 10000) {
 
         // We call the functions to generate "nums" and display it
         let nums = generateNums(fizz, buzz)
